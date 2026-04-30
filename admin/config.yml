@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main # تأكد أن هذا هو اسم الفرع في حسابك على جيت هاب
+  branch: main
 
 media_folder: "images"
 public_folder: "/images"
@@ -14,5 +14,4 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
