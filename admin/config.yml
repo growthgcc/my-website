@@ -1,12 +1,12 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main # تأكد أن هذا هو اسم الفرع في حسابك على جيت هاب
 
-media_folder: "images" # المجلد الذي ستُحفظ فيه الصور المرفوعة من الداشبورد
+media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "blog" # قسم المدونة
+  - name: "blog"
     label: "Blog Posts"
     folder: "blog"
     create: true
@@ -16,14 +16,3 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "accounting" # التحكم في أسعار المحاسبة
-    label: "Accounting Services"
-    files:
-      - file: "data/accounting.json"
-        label: "Pricing & Packages"
-        name: "pricing"
-        fields:
-          - { label: "Startup Lite Price", name: "startup_price", widget: "string" }
-          - { label: "VAT Pro Price", name: "vat_price", widget: "string" }
-          - { label: "Audit Ready Price", name: "audit_price", widget: "string" }
