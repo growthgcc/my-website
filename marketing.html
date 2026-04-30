@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROWTH | Marketing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .zoom-img { cursor: zoom-in; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- شريط التنقل -->
+    <nav class="bg-black text-white py-6 px-10 flex justify-between items-center">
+        <div>
+            <a href="index.html">
+                <h1 class="text-3xl font-black tracking-widest uppercase hover:text-gray-300 transition">Growth<span class="text-gray-400">.</span></h1>
+            </a>
+        </div>
+        <div class="hidden md:flex space-x-6 text-sm font-semibold">
+            <a href="index.html" class="hover:text-gray-400">Home</a>
+            <a href="accounting.html" class="hover:text-gray-400">Accounting</a>
+            <a href="marketing.html" class="text-gray-400 border-b-2 border-white pb-1">Marketing</a>
+            <a href="portfolio.html" class="hover:text-gray-400">Marketing Portfolio</a>
+            <a href="cases.html" class="hover:text-gray-400">Accounting Cases</a>
+            <a href="blog.html" class="hover:text-gray-400">Blog</a>
+            <a href="contact.html" class="bg-white text-black px-4 py-2 rounded hover:bg-gray-200 transition">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- عنوان الصفحة -->
+    <header class="bg-white py-16 px-10 text-center border-b border-gray-200">
+        <h1 class="text-5xl md:text-6xl font-black mb-4">Marketing Services</h1>
+        <p class="max-w-3xl mx-auto text-lg text-gray-600">
+            We don't sell "Likes". We engineer campaigns that drive actual sales and measurable ROAS.
+        </p>
+    </header>
+
+    <!-- الخدمة الأولى: إدارة إعلانات ميتا -->
+    <section class="bg-[#0f1115] text-white py-20 px-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="flex justify-center gap-4 mb-6 text-4xl">
+                    <span>♾️</span> <span>📱</span>
+                </div>
+                <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Service 1</h2>
+                <h3 class="text-4xl font-black text-[#38bdf8] mb-4 uppercase">Professional Meta Ads Management</h3>
+                <p class="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
+                    Complete management of your sponsored ad campaigns on Instagram and Facebook. We handle everything from technical setup to weekly optimization.
+                </p>
+            </div>
+
+            <!-- كروت تفاصيل الخدمة (التي كانت ناقصة) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div class="bg-[#1a1d24] p-8 border border-gray-800 rounded-xl hover:border-[#38bdf8] transition duration-300">
+                    <h4 class="text-xl font-bold mb-4 uppercase text-[#38bdf8]">Technical Setup</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li>• Ad account linking & verification.</li>
+                        <li>• Audience creation (custom, lookalike).</li>
+                        <li>• Placement optimization.</li>
+                    </ul>
+                </div>
+                <div class="bg-[#1a1d24] p-8 border border-gray-800 rounded-xl hover:border-[#38bdf8] transition duration-300">
+                    <h4 class="text-xl font-bold mb-4 uppercase text-[#38bdf8]">CBO Strategy</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li>• Campaign Budget Optimization.</li>
+                        <li>• Ad spend range: 120 - 300 USD/month.</li>
+                        <li>• Industry benchmarking and goals.</li>
+                    </ul>
+                </div>
+                <div class="bg-[#1a1d24] p-8 border border-gray-800 rounded-xl hover:border-[#38bdf8] transition duration-300">
+                    <h4 class="text-xl font-bold mb-4 uppercase text-[#38bdf8]">Weekly Tuning</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li>• Pausing low-performing ads.</li>
+                        <li>• Scaling winning campaigns.</li>
+                        <li>• Refreshing creatives & CTAs.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- قسم عرض نتائج الحملات الحقيقية مع ميزة التكبير -->
+            <div class="pt-16 border-t border-gray-800">
+                <div class="text-center mb-10">
+                    <h4 class="text-3xl font-black text-white mb-2 uppercase">Proven Results</h4>
+                    <p class="text-gray-400">Click on any image to enlarge and see the performance.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-[#1a1d24] border border-gray-700 rounded-lg overflow-hidden group hover:border-[#38bdf8] transition shadow-lg">
+                        <img src="R1.png" alt="Result 1" onclick="openModal(this.src)" class="zoom-img w-full h-64 object-cover opacity-90 group-hover:opacity-100 transition duration-300">
+                    </div>
+                    <div class="bg-[#1a1d24] border border-gray-700 rounded-lg overflow-hidden group hover:border-[#38bdf8] transition shadow-lg">
+                        <img src="R2.png" alt="Result 2" onclick="openModal(this.src)" class="zoom-img w-full h-64 object-cover opacity-90 group-hover:opacity-100 transition duration-300">
+                    </div>
+                    <div class="bg-[#1a1d24] border border-gray-700 rounded-lg overflow-hidden group hover:border-[#38bdf8] transition shadow-lg">
+                        <img src="R3.png" alt="Result 3" onclick="openModal(this.src)" class="zoom-img w-full h-64 object-cover opacity-90 group-hover:opacity-100 transition duration-300">
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم المواعيد والمدة -->
+            <div class="mt-20 bg-gradient-to-r from-gray-900 to-black border border-gray-800 rounded-2xl p-10 text-center">
+                <h4 class="text-xl font-bold text-[#38bdf8] mb-6 uppercase">Duration & Support</h4>
+                <div class="flex justify-center items-center gap-4 mb-8">
+                    <div class="bg-white text-black font-black py-2 px-4 rounded">1st Week</div>
+                    <div class="bg-white text-black font-black py-2 px-4 rounded">2nd Week</div>
+                    <div class="bg-white text-black font-black py-2 px-4 rounded">3rd Week</div>
+                    <div class="bg-white text-black font-black py-2 px-4 rounded">4th Week</div>
+                </div>
+                <p class="text-gray-300">Weekly review online meetings to cover results and planned changes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- نافذة التكبير (Modal) -->
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/95 flex items-center justify-center p-4" onclick="closeModal()">
+        <button class="absolute top-5 right-5 text-white text-5xl">&times;</button>
+        <img id="modalImage" src="" class="max-w-full max-h-full rounded-lg">
+    </div>
+
+    <!-- الخدمة الثانية: إنتاج المحتوى -->
+    <section class="py-20 px-10 bg-white">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2">
+                <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Service 2</h2>
+                <h3 class="text-4xl font-black text-black mb-6 uppercase">Creative Content Production</h3>
+                <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                    We produce high-end photography and videography designed specifically to convert viewers into customers.
+                </p>
+                <div class="space-y-4 mb-10">
+                    <p><strong>• Commercial Photography:</strong> High-res product shoots.</p>
+                    <p><strong>• Short-Form Video:</strong> Engaging Reels & TikToks.</p>
+                    <p><strong>• Post Production:</strong> Professional editing & motion graphics.</p>
+                </div>
+                <a href="portfolio.html" class="inline-flex items-center gap-3 bg-[#38bdf8] text-black px-8 py-4 rounded-full font-black text-lg hover:bg-blue-400 transition">
+                    View Our Visual Portfolio ✨
+                </a>
+            </div>
+            
+            <!-- صندوق المقارنة المثالية -->
+            <div class="md:w-1/2 bg-gray-100 rounded-3xl p-10 text-center border border-gray-200">
+                <h4 class="text-2xl font-black mb-4">The Perfect Match</h4>
+                <p class="text-gray-600 mb-8">Pairing our <strong>Creative Content</strong> with our <strong>Meta Ads Management</strong> is the ultimate growth formula.</p>
+                <div class="text-6xl mb-6">🤝</div>
+                <a href="contact.html" class="inline-block bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-gray-800 transition">Request a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="bg-black text-white py-12 px-10 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h2 class="text-3xl font-black tracking-widest uppercase">Growth<span class="text-gray-400">.</span></h2>
+            <div class="text-right text-sm text-gray-400">
+                <p>📞 +973 6668 0404 | ✉️ info@growth-gcc.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('imageModal').classList.remove('hidden');
+            document.getElementById('modalImage').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+
+</body>
+</html>
