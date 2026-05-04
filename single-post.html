@@ -3,53 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing & Media Services | Growth Consultancy</title>
+    <title>Article Title | Growth Consultancy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
     <style>
-        body { font-family: 'Inter', sans-serif; cursor: default; background-color: #0A0A0A; color: white; }
+        body { font-family: 'Inter', sans-serif; cursor: default; background-color: white; color: black; }
         .text-growth-blue { color: #0066FF; }
         .bg-growth-blue { background-color: #0066FF; }
-        .border-growth-blue { border-color: #0066FF; }
-        .nav-link { transition: all 0.3s ease; color: #9ca3af; }
-        .nav-link:hover { color: #0066FF; }
-        .vertical-label { writing-mode: vertical-rl; transform: rotate(180deg); }
         
-        /* كرت الخدمة */
-        .marketing-card { 
-            transition: all 0.4s ease; 
-            border: 1px solid #1a1a1a; 
-            background: #0f0f0f;
-        }
-        .marketing-card:hover { border-color: #0066FF; }
+        /* تنسيق محتوى المقال - محاذاة يسار مع مسافات عمودية */
+        .article-content p { font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem; color: #374151; text-align: left; }
+        .article-content h2 { font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-top: 3rem; margin-bottom: 1.5rem; letter-spacing: -0.025em; }
         
-        /* أرقام الخدمات الباهتة */
-        .service-num { color: #1a1a1a; font-size: 6rem; font-weight: 900; line-height: 1; position: absolute; right: 1rem; top: 0; z-index: 0; }
-
-        /* تأثير زر المحاسب المخصص - النسخة المعتمدة */
-        .blue-box {
-            background-color: #0066FF !important;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 120px;
-            cursor: pointer;
-            text-decoration: none;
+        /* تنسيق الاقتباس (Blockquote) كما في المتطلبات */
+        blockquote { 
+            border-left: 5px solid black; 
+            padding-left: 2rem; 
+            font-style: italic; 
+            font-size: 1.5rem; 
+            margin: 3rem 0; 
+            color: black;
+            font-weight: 500;
         }
-        .blue-box span {
-            color: white;
-            transition: opacity 0.2s ease;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 11px;
-            text-align: center;
-        }
-        .blue-box:hover { background-color: white !important; }
-        .blue-box:hover span { opacity: 0 !important; }
 
         .footer-icon { width: 18px; height: 18px; fill: white; transition: all 0.3s ease; }
         .footer-icon:hover { fill: #0066FF; }
@@ -57,137 +32,113 @@
 </head>
 <body class="antialiased">
 
-   <!-- NAVIGATION (Marketing Version) -->
-<nav class="fixed w-full z-[100] bg-black/90 border-b border-gray-800 px-6 md:px-10 py-5 flex justify-between items-center">
-    <!-- الشعار -->
-    <a href="index.html" class="text-2xl font-black uppercase tracking-tighter text-white z-[101]">
+   <!-- NAVIGATION -->
+<nav class="fixed w-full z-[100] bg-white/95 border-b border-gray-100 px-6 md:px-10 py-5 flex justify-between items-center">
+    <!-- الشعار الآن قابل للضغط -->
+    <a href="index.html" class="text-2xl font-black uppercase tracking-tighter text-black z-[101]">
         Growth<span class="text-growth-blue">.</span>
     </a>
 
-    <!-- زر المنيو للموبايل -->
-    <button id="menu-toggle" class="md:hidden text-white focus:outline-none z-[101]">
+    <!-- زر المنيو للموبايل (يظهر فقط في الشاشات الصغيرة) -->
+    <button id="menu-toggle" class="md:hidden text-black focus:outline-none z-[101]">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
     </button>
 
     <!-- المنيو (Desktop) -->
     <div class="hidden md:flex space-x-8 text-[12px] font-bold uppercase tracking-[0.2em]">
-        <a href="index.html" class="nav-link text-gray-400 hover:text-white transition">Home</a>
-        <a href="about.html" class="nav-link text-gray-400 hover:text-white transition">Why Growth?</a>
-        <a href="accounting.html" class="nav-link text-gray-400 hover:text-white transition">Accounting</a>
-        <a href="marketing.html" class="nav-link text-growth-blue">Marketing</a>
-        <a href="blog.html" class="nav-link text-gray-400 hover:text-white transition">Blog</a>
-        <a href="contact.html" class="bg-white text-black px-5 py-2 hover:bg-growth-blue hover:text-white transition duration-300 text-[11px]">Contact</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">Why Growth?</a>
+        <a href="accounting.html" class="nav-link">Accounting</a>
+        <a href="marketing.html" class="nav-link">Marketing</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="bg-black text-white px-5 py-2 hover:bg-growth-blue transition duration-300">Contact</a>
     </div>
 
-    <!-- المنيو (Mobile) - جعلنا الخلفية سوداء هنا لكي يظهر الكلام الأبيض -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#0A0A0A] flex-col items-center justify-center space-y-8 text-xl font-black uppercase tracking-widest hidden md:hidden z-[100]">
-        <a href="index.html" class="text-white hover:text-growth-blue">Home</a>
-        <a href="about.html" class="text-white hover:text-growth-blue">Why Growth?</a>
-        <a href="accounting.html" class="text-white hover:text-growth-blue">Accounting</a>
-        <a href="marketing.html" class="text-growth-blue">Marketing</a>
-        <a href="blog.html" class="text-white hover:text-growth-blue">Blog</a>
-        <a href="contact.html" class="text-white hover:text-growth-blue">Contact</a>
+    <!-- المنيو (Mobile - يفتح عند الضغط) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white flex-col items-center justify-center space-y-8 text-xl font-black uppercase tracking-widest hidden md:hidden z-[100]">
+        <a href="index.html" class="hover:text-growth-blue">Home</a>
+        <a href="about.html" class="hover:text-growth-blue">Why Growth?</a>
+        <a href="accounting.html" class="hover:text-growth-blue">Accounting</a>
+        <a href="marketing.html" class="hover:text-growth-blue">Marketing</a>
+        <a href="blog.html" class="hover:text-growth-blue">Blog</a>
+        <a href="contact.html" class="text-growth-blue">Contact</a>
     </div>
 </nav>
 
-    <!-- SECTION 1: HERO -->
-    <header class="min-h-[70vh] flex flex-col justify-center items-center text-center px-6 pt-32 relative overflow-hidden">
-        <div class="absolute top-10 right-10 text-white/5 text-[15rem] font-thin rotate-45 select-none">✕</div>
-        <div class="max-w-4xl z-10">
-            <span class="text-growth-blue font-black uppercase tracking-[0.6em] text-[10px] mb-4 block">Services</span>
-            <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tight mb-6">Marketing & Media</h1>
-            <p class="text-lg text-gray-500 italic font-serif">Being seen is the start. Being calculated is the standard.</p>
+    <!-- ARTICLE HEADER -->
+    <header class="pt-40 pb-10 px-6 md:px-20 bg-white">
+        <div class="max-w-[720px] mx-auto">
+            <a href="blog.html" class="text-xs font-black uppercase tracking-[0.3em] text-gray-400 hover:text-growth-blue transition mb-12 inline-block">← ALL NOTES</a>
+            
+            <div class="mb-6">
+                <span class="text-[10px] font-black uppercase tracking-[0.4em] text-growth-blue">THE BOOKS</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-black uppercase leading-[1.1] mb-8 tracking-tight">
+                Why ROAS is the only metric that matters in 2026
+            </h1>
+            
+            <div class="flex items-center gap-4 text-xs font-bold text-gray-400 uppercase tracking-widest pb-8 border-b border-gray-100">
+                <span>03 May 2026</span>
+                <span>•</span>
+                <span>By Growth Consultancy</span>
+            </div>
         </div>
     </header>
 
-    <!-- SECTION 2: THE SERVICES GRID -->
-    <section class="py-20 px-6 md:px-20">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- ARTICLE BODY -->
+    <main class="px-6 md:px-20 pb-32">
+        <div class="max-w-[720px] mx-auto article-content">
             
-            <!-- 01: Content -->
-            <div class="marketing-card p-12 relative overflow-hidden group">
-                <span class="service-num">01</span>
-                <div class="relative z-10">
-                    <div class="text-growth-blue mb-8">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-black uppercase mb-6">Content Creation</h3>
-                    <p class="text-gray-400 leading-relaxed text-lg">High-end photography, videography, and graphic design that reflects the true quality of your brand. We create assets that sell, not content that fills a calendar.</p>
-                </div>
+            <p>Managing your business based on "Reach" or "Impressions" is a relic of the past. In 2026, the gap between accounting and marketing has finally closed, and those who don't adapt are simply guessing with their budget.</p>
+
+            <blockquote>
+                "A brand is a feeling, but a pipeline is a system. Aesthetic without arithmetic is just expensive noise."
+            </blockquote>
+
+            <h2>The Problem with Vanity Metrics</h2>
+            <p>Most agencies will show you a report full of colors. Green arrows for followers, blue bars for clicks, and a gold star for engagement. But none of these metrics tell you if the money actually hit your bank account. This is where most businesses fail—they see marketing as an expense rather than a calculated investment.</p>
+
+            <!-- Inline Image Example -->
+            <div class="my-12">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2022" class="w-full grayscale contrast-125" alt="Data Analysis">
+                <p class="text-xs text-gray-400 mt-4 italic uppercase tracking-widest text-center">Fig 01: The correlation between ledger accuracy and ad performance.</p>
             </div>
 
-            <!-- 02: Ads -->
-            <div class="marketing-card p-12 relative overflow-hidden group">
-                <span class="service-num">02</span>
-                <div class="relative z-10">
-                    <div class="text-growth-blue mb-8">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-black uppercase mb-6">Ads Management</h3>
-                    <p class="text-[10px] font-bold text-gray-500 uppercase mb-4">Meta & Google</p>
-                    <p class="text-gray-400 leading-relaxed text-lg">Targeted campaigns. We buy customers, not views. Every BHD is tracked to its return through real-time ROAS measurement.</p>
-                </div>
-            </div>
-
-            <!-- 03: Automation -->
-            <div class="marketing-card p-12 relative overflow-hidden group">
-                <span class="service-num">03</span>
-                <div class="relative z-10">
-                    <div class="text-growth-blue mb-8">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-black uppercase mb-6">Setup & Automation</h3>
-                    <p class="text-gray-400 leading-relaxed text-lg">Bio architecture, link systems, and visual identity. Automated workflows that qualify leads while you focus on operations.</p>
-                </div>
-            </div>
-
-            <!-- 04: Google -->
-            <div class="marketing-card p-12 relative overflow-hidden group">
-                <span class="service-num">04</span>
-                <div class="relative z-10">
-                    <div class="text-growth-blue mb-8">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-black uppercase mb-6">Google Listing</h3>
-                    <p class="text-gray-400 leading-relaxed text-lg">Your pin on the map is a doorway, not a decoration. We optimize your profile for local discovery and accurate customer information.</p>
-                </div>
-            </div>
-
+            <h2>The ROAS Revolution</h2>
+            <p>Return on Ad Spend (ROAS) isn't just a marketing term; it's a financial one. When we speak ROAS, we are speaking about the efficiency of your capital. If you spend 1 BHD, we need to see exactly how much profit it generated in your ledger. Not revenue—profit.</p>
+            
+            <p>This requires your accountant and your marketer to be in the same room, looking at the same numbers. It's rare, but it's the only way to grow predictably.</p>
         </div>
-    </section>
 
-    <!-- SECTION 3: THE PRINCIPLE (The Revenue Engine) -->
-    <section class="bg-white text-black py-32 px-6 text-center border-y border-gray-100">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl md:text-5xl font-black uppercase mb-10 leading-tight">We don't build brands. <br><span class="text-growth-blue">We build revenue engines.</span></h3>
-            <p class="text-xl text-gray-500 leading-relaxed font-medium">A brand is a feeling. A pipeline is a system. We design every touchpoint to move the customer closer to a transaction. <br><br> <span class="text-black font-black uppercase tracking-widest">Aesthetic without arithmetic is just expensive noise.</span></p>
-        </div>
-    </section>
-
-    <!-- SECTION 4: CTA BAR -->
-    <section class="py-24 bg-[#0A0A0A] flex justify-center px-6">
-        <div class="flex flex-col shadow-2xl overflow-hidden max-w-xl w-full border border-gray-800">
-            <div class="bg-white text-black p-12 flex items-center justify-center text-center">
-                <p class="italic font-extrabold text-xl md:text-2xl">
-                    Your marketing should work when you don't.
-                </p>
+        <!-- ARTICLE FOOTER -->
+        <div class="max-w-[720px] mx-auto mt-20 pt-10 border-t border-gray-100">
+            <div class="flex flex-wrap gap-3">
+                <span class="px-3 py-1 bg-gray-50 text-[10px] font-bold text-gray-500 uppercase tracking-widest">VAT</span>
+                <span class="px-3 py-1 bg-gray-50 text-[10px] font-bold text-gray-500 uppercase tracking-widest">ROAS</span>
+                <span class="px-3 py-1 bg-gray-50 text-[10px] font-bold text-gray-500 uppercase tracking-widest">META</span>
+                <span class="px-3 py-1 bg-gray-50 text-[10px] font-bold text-gray-500 uppercase tracking-widest">AUTOMATION</span>
             </div>
-            <a href="contact.html" class="blue-box">
-                <span>MEET YOUR <br>MARKETING MANAGER</span>
+        </div>
+    </main>
+
+    <!-- NEXT READ & CTA -->
+    <section class="py-24 bg-gray-50 border-y border-gray-100 px-6">
+        <div class="max-w-[720px] mx-auto">
+            <h4 class="text-xs font-black uppercase tracking-[0.4em] text-gray-400 mb-8">Next Note</h4>
+            <a href="#" class="group">
+                <h3 class="text-2xl md:text-3xl font-black uppercase mb-4 group-hover:text-growth-blue transition-colors">The revolving door of accounting firms</h3>
+                <p class="text-gray-500 text-sm uppercase tracking-widest">Read. Then decide. →</p>
             </a>
+            
+            <div class="mt-20 bg-black text-white p-10 text-center">
+                <p class="italic font-bold text-lg mb-8">Calculated decisions start with reading. Execution starts with a call.</p>
+                <a href="contact.html" class="bg-growth-blue text-white px-10 py-4 text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-growth-blue transition-all">PICK YOUR PATH</a>
+            </div>
         </div>
     </section>
 
-    <!-- SECTION 5: TRANSITION -->
-    <section class="py-32 bg-black text-center px-6">
-        <h3 class="text-2xl font-black uppercase mb-6 text-gray-500">Every click costs money.</h3>
-        <p class="text-lg text-gray-400 mb-10">Every cost needs a ledger. See how we connect both sides.</p>
-        <a href="accounting.html" class="text-[11px] font-black uppercase tracking-[0.4em] text-white border-b-2 border-growth-blue pb-2 hover:text-growth-blue transition">
-            VIEW ACCOUNTING & SYSTEM SERVICES →
-        </a>
-    </section>
-
-    <!-- FOOTER -->
+   <!-- FOOTER -->
     <footer class="bg-black text-white py-12 px-10 border-t border-gray-900">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10">
             

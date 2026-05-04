@@ -3,188 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing & Media Services | Growth Consultancy</title>
+    <title>Why Growth? | Growth Consultancy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; cursor: default; background-color: #0A0A0A; color: white; }
+        body { font-family: 'Inter', sans-serif; cursor: default; background-color: white; color: black; }
         .text-growth-blue { color: #0066FF; }
         .bg-growth-blue { background-color: #0066FF; }
         .border-growth-blue { border-color: #0066FF; }
-        .nav-link { transition: all 0.3s ease; color: #9ca3af; }
+        .nav-link { transition: all 0.3s ease; }
         .nav-link:hover { color: #0066FF; }
         .vertical-label { writing-mode: vertical-rl; transform: rotate(180deg); }
-        
-        /* كرت الخدمة */
-        .marketing-card { 
-            transition: all 0.4s ease; 
-            border: 1px solid #1a1a1a; 
-            background: #0f0f0f;
-        }
-        .marketing-card:hover { border-color: #0066FF; }
-        
-        /* أرقام الخدمات الباهتة */
-        .service-num { color: #1a1a1a; font-size: 6rem; font-weight: 900; line-height: 1; position: absolute; right: 1rem; top: 0; z-index: 0; }
+        .footer-icon { width: 22px; height: 22px; fill: white; transition: all 0.3s ease; }
+        .footer-icon:hover { fill: #0066FF; }
 
-        /* تأثير زر المحاسب المخصص - النسخة المعتمدة */
-        .blue-box {
-            background-color: #0066FF !important;
+        /* Button Styling */
+        .cta-button {
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 120px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .blue-box span {
+            background-color: black;
             color: white;
-            transition: opacity 0.2s ease;
-            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            font-size: 11px;
-            text-align: center;
+            font-weight: 800;
         }
-        .blue-box:hover { background-color: white !important; }
-        .blue-box:hover span { opacity: 0 !important; }
-
-        .footer-icon { width: 18px; height: 18px; fill: white; transition: all 0.3s ease; }
-        .footer-icon:hover { fill: #0066FF; }
+        .cta-button:hover {
+            background-color: #0066FF;
+            color: white;
+        }
     </style>
 </head>
 <body class="antialiased">
 
-   <!-- NAVIGATION (Marketing Version) -->
-<nav class="fixed w-full z-[100] bg-black/90 border-b border-gray-800 px-6 md:px-10 py-5 flex justify-between items-center">
-    <!-- الشعار -->
-    <a href="index.html" class="text-2xl font-black uppercase tracking-tighter text-white z-[101]">
+    <!-- NAVIGATION -->
+<nav class="fixed w-full z-[100] bg-white/95 border-b border-gray-100 px-6 md:px-10 py-5 flex justify-between items-center">
+    <!-- الشعار الآن قابل للضغط -->
+    <a href="index.html" class="text-2xl font-black uppercase tracking-tighter text-black z-[101]">
         Growth<span class="text-growth-blue">.</span>
     </a>
 
-    <!-- زر المنيو للموبايل -->
-    <button id="menu-toggle" class="md:hidden text-white focus:outline-none z-[101]">
+    <!-- زر المنيو للموبايل (يظهر فقط في الشاشات الصغيرة) -->
+    <button id="menu-toggle" class="md:hidden text-black focus:outline-none z-[101]">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
     </button>
 
     <!-- المنيو (Desktop) -->
     <div class="hidden md:flex space-x-8 text-[12px] font-bold uppercase tracking-[0.2em]">
-        <a href="index.html" class="nav-link text-gray-400 hover:text-white transition">Home</a>
-        <a href="about.html" class="nav-link text-gray-400 hover:text-white transition">Why Growth?</a>
-        <a href="accounting.html" class="nav-link text-gray-400 hover:text-white transition">Accounting</a>
-        <a href="marketing.html" class="nav-link text-growth-blue">Marketing</a>
-        <a href="blog.html" class="nav-link text-gray-400 hover:text-white transition">Blog</a>
-        <a href="contact.html" class="bg-white text-black px-5 py-2 hover:bg-growth-blue hover:text-white transition duration-300 text-[11px]">Contact</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">Why Growth?</a>
+        <a href="accounting.html" class="nav-link">Accounting</a>
+        <a href="marketing.html" class="nav-link">Marketing</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="bg-black text-white px-5 py-2 hover:bg-growth-blue transition duration-300">Contact</a>
     </div>
 
-    <!-- المنيو (Mobile) - جعلنا الخلفية سوداء هنا لكي يظهر الكلام الأبيض -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#0A0A0A] flex-col items-center justify-center space-y-8 text-xl font-black uppercase tracking-widest hidden md:hidden z-[100]">
-        <a href="index.html" class="text-white hover:text-growth-blue">Home</a>
-        <a href="about.html" class="text-white hover:text-growth-blue">Why Growth?</a>
-        <a href="accounting.html" class="text-white hover:text-growth-blue">Accounting</a>
-        <a href="marketing.html" class="text-growth-blue">Marketing</a>
-        <a href="blog.html" class="text-white hover:text-growth-blue">Blog</a>
-        <a href="contact.html" class="text-white hover:text-growth-blue">Contact</a>
+    <!-- المنيو (Mobile - يفتح عند الضغط) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white flex-col items-center justify-center space-y-8 text-xl font-black uppercase tracking-widest hidden md:hidden z-[100]">
+        <a href="index.html" class="hover:text-growth-blue">Home</a>
+        <a href="about.html" class="hover:text-growth-blue">Why Growth?</a>
+        <a href="accounting.html" class="hover:text-growth-blue">Accounting</a>
+        <a href="marketing.html" class="hover:text-growth-blue">Marketing</a>
+        <a href="blog.html" class="hover:text-growth-blue">Blog</a>
+        <a href="contact.html" class="text-growth-blue">Contact</a>
     </div>
 </nav>
 
-    <!-- SECTION 1: HERO -->
-    <header class="min-h-[70vh] flex flex-col justify-center items-center text-center px-6 pt-32 relative overflow-hidden">
-        <div class="absolute top-10 right-10 text-white/5 text-[15rem] font-thin rotate-45 select-none">✕</div>
-        <div class="max-w-4xl z-10">
-            <span class="text-growth-blue font-black uppercase tracking-[0.6em] text-[10px] mb-4 block">Services</span>
-            <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tight mb-6">Marketing & Media</h1>
-            <p class="text-lg text-gray-500 italic font-serif">Being seen is the start. Being calculated is the standard.</p>
+    <!-- SECTION 1: CENTERED HERO (Balanced Font Sizes) -->
+    <header class="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 pt-20 bg-white">
+        <div class="max-w-4xl">
+            <span class="text-growth-blue font-black uppercase tracking-[0.6em] text-[10px] mb-6 block font-bold">Why Growth?</span>
+            <h1 class="text-5xl md:text-7xl font-black uppercase leading-tight mb-10 tracking-tight">
+                THE RARE MIX OF <br>ACCOUNTING & MARKETING
+            </h1>
+            <div class="space-y-4 max-w-2xl mx-auto mb-12">
+                <p class="text-lg md:text-xl font-medium text-gray-900 leading-relaxed uppercase tracking-tight">
+                    Because growth without accounting is just <span class="text-growth-blue font-bold">spending.</span>
+                </p>
+                <p class="text-lg md:text-xl font-medium text-gray-400 leading-relaxed uppercase tracking-tight">
+                    And accounting without growth is just counting.
+                </p>
+            </div>
+            <a href="contact.html" class="cta-button px-10 py-4 text-[11px] inline-block">
+                PICK YOUR PATH
+            </a>
         </div>
     </header>
 
-    <!-- SECTION 2: THE SERVICES GRID -->
-    <section class="py-20 px-6 md:px-20">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <!-- 01: Content -->
-            <div class="marketing-card p-12 relative overflow-hidden group">
-                <span class="service-num">01</span>
-                <div class="relative z-10">
-                    <div class="text-growth-blue mb-8">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-black uppercase mb-6">Content Creation</h3>
-                    <p class="text-gray-400 leading-relaxed text-lg">High-end photography, videography, and graphic design that reflects the true quality of your brand. We create assets that sell, not content that fills a calendar.</p>
+    <!-- SECTION 2: PHILOSOPHY BANDS -->
+    <section class="border-y border-gray-100">
+        <!-- Accounting Band -->
+        <div class="flex flex-col md:flex-row bg-white">
+            <div class="md:w-24 bg-gray-50 flex items-center justify-center py-10 border-r border-gray-100">
+                <span class="vertical-label text-[9px] font-black uppercase tracking-[1em] text-gray-400">Section 01</span>
+            </div>
+            <div class="flex-1 p-12 md:p-24 flex flex-col md:flex-row items-center gap-12">
+                <div class="text-growth-blue shrink-0">
+                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-black uppercase mb-6 leading-none">We speak Accounting</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed max-w-2xl">
+                        We don't just file papers. Our advisors ensure every BHD is ready to scale your business. We find <span class="text-black font-bold">opportunities</span> where others only see mistakes.
+                    </p>
                 </div>
             </div>
+        </div>
 
-            <!-- 02: Ads -->
-            <div class="marketing-card p-12 relative overflow-hidden group">
-                <span class="service-num">02</span>
-                <div class="relative z-10">
-                    <div class="text-growth-blue mb-8">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-black uppercase mb-6">Ads Management</h3>
-                    <p class="text-[10px] font-bold text-gray-500 uppercase mb-4">Meta & Google</p>
-                    <p class="text-gray-400 leading-relaxed text-lg">Targeted campaigns. We buy customers, not views. Every BHD is tracked to its return through real-time ROAS measurement.</p>
+        <!-- Marketing Band -->
+        <div class="flex flex-col md:flex-row bg-black text-white">
+            <div class="md:w-24 bg-[#111] flex items-center justify-center py-10 border-r border-gray-900">
+                <span class="vertical-label text-[9px] font-black uppercase tracking-[1em] text-growth-blue">Section 02</span>
+            </div>
+            <div class="flex-1 p-12 md:p-24 flex flex-col md:flex-row items-center gap-12">
+                <div class="text-growth-blue shrink-0">
+                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-black uppercase mb-6 text-growth-blue leading-none">We speak ROAS</h2>
+                    <p class="text-lg text-gray-400 leading-relaxed max-w-2xl">
+                        We ignore vanity metrics. No "likes", no noise. We design campaigns based on <span class="text-white font-bold italic">real bank balance numbers</span>.
+                    </p>
                 </div>
             </div>
-
-            <!-- 03: Automation -->
-            <div class="marketing-card p-12 relative overflow-hidden group">
-                <span class="service-num">03</span>
-                <div class="relative z-10">
-                    <div class="text-growth-blue mb-8">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-black uppercase mb-6">Setup & Automation</h3>
-                    <p class="text-gray-400 leading-relaxed text-lg">Bio architecture, link systems, and visual identity. Automated workflows that qualify leads while you focus on operations.</p>
-                </div>
-            </div>
-
-            <!-- 04: Google -->
-            <div class="marketing-card p-12 relative overflow-hidden group">
-                <span class="service-num">04</span>
-                <div class="relative z-10">
-                    <div class="text-growth-blue mb-8">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-black uppercase mb-6">Google Listing</h3>
-                    <p class="text-gray-400 leading-relaxed text-lg">Your pin on the map is a doorway, not a decoration. We optimize your profile for local discovery and accurate customer information.</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!-- SECTION 3: THE PRINCIPLE (The Revenue Engine) -->
-    <section class="bg-white text-black py-32 px-6 text-center border-y border-gray-100">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl md:text-5xl font-black uppercase mb-10 leading-tight">We don't build brands. <br><span class="text-growth-blue">We build revenue engines.</span></h3>
-            <p class="text-xl text-gray-500 leading-relaxed font-medium">A brand is a feeling. A pipeline is a system. We design every touchpoint to move the customer closer to a transaction. <br><br> <span class="text-black font-black uppercase tracking-widest">Aesthetic without arithmetic is just expensive noise.</span></p>
-        </div>
-    </section>
-
-    <!-- SECTION 4: CTA BAR -->
-    <section class="py-24 bg-[#0A0A0A] flex justify-center px-6">
-        <div class="flex flex-col shadow-2xl overflow-hidden max-w-xl w-full border border-gray-800">
-            <div class="bg-white text-black p-12 flex items-center justify-center text-center">
-                <p class="italic font-extrabold text-xl md:text-2xl">
-                    Your marketing should work when you don't.
-                </p>
+    <!-- SECTION 3: WHO THIS IS FOR -->
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- FOR YOU -->
+            <div class="bg-gray-50 p-12 border border-gray-100 flex flex-col justify-center">
+                <h3 class="text-[10px] font-black uppercase tracking-[0.5em] text-growth-blue mb-10">This is for you if:</h3>
+                <ul class="space-y-6">
+                    <li class="flex gap-4 items-start">
+                        <div class="text-growth-blue font-black">✓</div>
+                        <p class="text-lg font-bold uppercase leading-snug">You want to know exact profit from every 1 BHD spent.</p>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <div class="text-growth-blue font-black">✓</div>
+                        <p class="text-lg font-bold uppercase leading-snug">Your books need order before you scale.</p>
+                    </li>
+                </ul>
             </div>
-            <a href="contact.html" class="blue-box">
-                <span>MEET YOUR <br>MARKETING MANAGER</span>
-            </a>
+            <!-- NOT FOR YOU -->
+            <div class="bg-black p-12 text-white flex flex-col justify-center">
+                <h3 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-500 mb-10">This is NOT for you if:</h3>
+                <ul class="space-y-6">
+                    <li class="flex gap-4 items-start">
+                        <div class="text-growth-blue font-black">✕</div>
+                        <p class="text-lg font-bold uppercase leading-snug">You want more "likes" and "followers" without sales.</p>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <div class="text-growth-blue font-black">✕</div>
+                        <p class="text-lg font-bold uppercase leading-snug">You think "brand awareness" is a standalone strategy.</p>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </section>
-
-    <!-- SECTION 5: TRANSITION -->
-    <section class="py-32 bg-black text-center px-6">
-        <h3 class="text-2xl font-black uppercase mb-6 text-gray-500">Every click costs money.</h3>
-        <p class="text-lg text-gray-400 mb-10">Every cost needs a ledger. See how we connect both sides.</p>
-        <a href="accounting.html" class="text-[11px] font-black uppercase tracking-[0.4em] text-white border-b-2 border-growth-blue pb-2 hover:text-growth-blue transition">
-            VIEW ACCOUNTING & SYSTEM SERVICES →
-        </a>
     </section>
 
     <!-- FOOTER -->

@@ -3,220 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GROWTH | Accounting Packages</title>
+    <title>Accounting & ERP | Growth Consultancy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; cursor: default; background-color: white; }
+        .text-growth-blue { color: #0066FF; }
+        .bg-growth-blue { background-color: #0066FF; }
+        .border-growth-blue { border-color: #0066FF; }
+        .nav-link { transition: all 0.3s ease; }
+        .nav-link:hover { color: #0066FF; }
+        
+        /* Card Styling */
+        .service-card { 
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            border: 1px solid #f3f4f6; 
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card:hover { 
+            border-color: #0066FF; 
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.05);
+        }
+
+        .footer-icon { width: 18px; height: 18px; fill: white; transition: all 0.3s ease; }
+        .footer-icon:hover { fill: #0066FF; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="antialiased">
 
-    <!-- شريط التنقل -->
-    <nav class="bg-black text-white py-6 px-10 flex justify-between items-center">
-        <div>
-            <a href="index.html">
-                <h1 class="text-3xl font-black tracking-widest uppercase hover:text-gray-300 transition">Growth<span class="text-gray-400">.</span></h1>
-            </a>
-        </div>
-        <div class="hidden md:flex space-x-6 text-sm font-semibold">
-            <a href="index.html" class="hover:text-gray-400">Home</a>
-            <a href="accounting.html" class="text-gray-400 border-b-2 border-white pb-1">Accounting</a>
-            <a href="marketing.html" class="hover:text-gray-400">Marketing</a>
-            <a href="portfolio.html" class="hover:text-gray-400">Marketing Portfolio</a>
-            <a href="cases.html" class="hover:text-gray-400">Accounting Cases</a>
-            <a href="blog.html" class="hover:text-gray-400">Blog</a>
-            <a href="contact.html" class="bg-white text-black px-4 py-2 rounded hover:bg-gray-200 transition">Contact Us</a>
-        </div>
-    </nav>
+    <!<!-- NAVIGATION -->
+<nav class="fixed w-full z-[100] bg-white/95 border-b border-gray-100 px-6 md:px-10 py-5 flex justify-between items-center">
+    <!-- الشعار الآن قابل للضغط -->
+    <a href="index.html" class="text-2xl font-black uppercase tracking-tighter text-black z-[101]">
+        Growth<span class="text-growth-blue">.</span>
+    </a>
 
-    <!-- عنوان الصفحة -->
-    <header class="bg-white py-16 px-10 text-center border-b border-gray-200">
-        <h1 class="text-5xl md:text-6xl font-black mb-4">Accounting Packages</h1>
-        <p class="max-w-3xl mx-auto text-lg text-gray-600">
-            Professional accounting solutions tailored to your business size and needs.
-        </p>
+    <!-- زر المنيو للموبايل (يظهر فقط في الشاشات الصغيرة) -->
+    <button id="menu-toggle" class="md:hidden text-black focus:outline-none z-[101]">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+    </button>
+
+    <!-- المنيو (Desktop) -->
+    <div class="hidden md:flex space-x-8 text-[12px] font-bold uppercase tracking-[0.2em]">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">Why Growth?</a>
+        <a href="accounting.html" class="nav-link">Accounting</a>
+        <a href="marketing.html" class="nav-link">Marketing</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="bg-black text-white px-5 py-2 hover:bg-growth-blue transition duration-300">Contact</a>
+    </div>
+
+    <!-- المنيو (Mobile - يفتح عند الضغط) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white flex-col items-center justify-center space-y-8 text-xl font-black uppercase tracking-widest hidden md:hidden z-[100]">
+        <a href="index.html" class="hover:text-growth-blue">Home</a>
+        <a href="about.html" class="hover:text-growth-blue">Why Growth?</a>
+        <a href="accounting.html" class="hover:text-growth-blue">Accounting</a>
+        <a href="marketing.html" class="hover:text-growth-blue">Marketing</a>
+        <a href="blog.html" class="hover:text-growth-blue">Blog</a>
+        <a href="contact.html" class="text-growth-blue">Contact</a>
+    </div>
+</nav>
+
+    <!-- SECTION 1: HERO (Simple Centered) -->
+    <header class="pt-48 pb-20 px-6 text-center bg-white">
+        <div class="max-w-4xl mx-auto">
+            <span class="text-growth-blue font-black uppercase tracking-[0.6em] text-[10px] mb-4 block">Services</span>
+            <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6">Accounting System Services</h1>
+        </div>
     </header>
 
-    <!-- قسم باقات مسك الدفاتر (Monthly Bookkeeping) - بتصميم داكن مطابق للملف -->
-    <section class="bg-[#0f1115] text-white py-20 px-10">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-blue-400 mb-4">Monthly Bookkeeping</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
-                    Core Service: Recording financial transactions (Sales, Purchases, Fixed Assets) and preparing financial reports (P&L, Balance Sheet, and Analysis).
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Package 1: Startup Lite -->
-                <div class="bg-[#1a1d24] rounded-2xl p-8 border border-gray-800 hover:border-blue-500 transition duration-300">
-                    <h3 class="text-2xl font-bold mb-2">Startup Lite</h3>
-                    <p class="text-sm text-gray-400 h-12">New/Small businesses, non-VAT registered, or non-W.L.L.</p>
-                    <div class="my-8 text-center bg-gray-800/50 rounded-lg py-4">
-                        <span class="text-5xl font-black text-white">50</span>
-                        <span class="text-xl text-blue-400 font-bold">BD</span>
-                    </div>
-                    <ul class="space-y-4 text-gray-300 text-sm">
-                        <li class="flex items-center gap-3">
-                            <span>👨‍💻</span> <span><strong class="text-white">100%</strong> Online Meetings</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span>📄</span> <span>Digital Document Submission</span>
-                        </li>
-                        <li class="flex items-center gap-3 opacity-50">
-                            <span>❌</span> <span>Audit Support Not included</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Package 2: VAT Pro -->
-                <div class="bg-[#1a1d24] rounded-2xl p-8 border border-gray-800 hover:border-blue-500 transition duration-300 relative transform md:-translate-y-4 shadow-2xl">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-xs font-bold tracking-wider">MOST POPULAR</div>
-                    <h3 class="text-2xl font-bold mb-2">VAT Pro</h3>
-                    <p class="text-sm text-gray-400 h-12">VAT-registered companies (Monthly/Quarterly filing)</p>
-                    <div class="my-8 text-center bg-blue-500/10 rounded-lg py-4 border border-blue-500/20">
-                        <span class="text-5xl font-black text-white">85</span>
-                        <span class="text-xl text-blue-400 font-bold">BD</span>
-                    </div>
-                    <ul class="space-y-4 text-gray-300 text-sm">
-                        <li class="flex items-center gap-3">
-                            <span>🤝</span> <span><strong class="text-white">1 In-Person</strong> Visit per month</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span>📄</span> <span>Digital Document Submission</span>
-                        </li>
-                        <li class="flex items-center gap-3 opacity-50">
-                            <span>❌</span> <span>Audit Support Not included</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Package 3: Audit Ready -->
-                <div class="bg-[#1a1d24] rounded-2xl p-8 border border-gray-800 hover:border-blue-500 transition duration-300">
-                    <h3 class="text-2xl font-bold mb-2">Audit Ready</h3>
-                    <p class="text-sm text-gray-400 h-12">VAT-registered companies requiring annual audits</p>
-                    <div class="my-8 text-center bg-gray-800/50 rounded-lg py-4">
-                        <span class="text-5xl font-black text-white">100</span>
-                        <span class="text-xl text-blue-400 font-bold">BD</span>
-                    </div>
-                    <ul class="space-y-4 text-gray-300 text-sm">
-                        <li class="flex items-center gap-3">
-                            <span>🤝</span> <span><strong class="text-white">1 In-Person</strong> Visit per month</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span>📄</span> <span>Digital Document Submission</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-blue-400">
-                            <span>✅</span> <span><strong class="text-blue-400">Full Audit Prep</strong> included</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Add-on Service -->
-            <div class="mt-12 bg-blue-900/20 border border-blue-800 rounded-xl p-6 text-center max-w-3xl mx-auto">
-                <h4 class="text-blue-400 font-bold text-lg mb-2">Add-on Service: Physical Document Collection</h4>
-                <p class="text-sm text-gray-300">Don't have time to scan? We can arrange a courier to collect and return your physical documents for an additional <strong class="text-white">10 BHD</strong> per month.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم أنظمة ERP -->
-    <section class="py-20 px-10 bg-gray-100">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-black mb-4">ERP & Software Supervision</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Expert supervision and setup for Odoo, Zoho Books, and QuickBooks Online. We provide high-level professional accountants to oversee your internal team.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- Phase 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-black">
-                    <h3 class="text-2xl font-black mb-2">Phase 1</h3>
-                    <p class="text-blue-600 font-semibold mb-6">Supervision & Training<br><span class="text-sm text-gray-500 font-normal">(System setup and staff empowerment)</span></p>
-                    
-                    <div class="flex justify-between items-center border-b border-gray-100 pb-4 mb-4">
-                        <span class="font-bold text-gray-700">Service Sector</span>
-                        <span class="text-2xl font-black">300<span class="text-sm text-gray-500"> BD</span></span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-gray-700">Trade & Industry Sectors</span>
-                        <span class="text-2xl font-black">350<span class="text-sm text-gray-500"> BD</span></span>
-                    </div>
-                </div>
-
-                <!-- Phase 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-gray-400">
-                    <h3 class="text-2xl font-black mb-2">Phase 2</h3>
-                    <p class="text-blue-600 font-semibold mb-6">Ongoing Monitoring<br><span class="text-sm text-gray-500 font-normal">(Ensuring accuracy and data integrity)</span></p>
-                    
-                    <div class="flex justify-between items-center border-b border-gray-100 pb-4 mb-4">
-                        <span class="font-bold text-gray-700">Service Sector</span>
-                        <span class="text-2xl font-black">100<span class="text-sm text-gray-500"> BD</span></span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-gray-700">Trade & Industry Sectors</span>
-                        <span class="text-2xl font-black">125<span class="text-sm text-gray-500"> BD</span></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- المحاسب المالي المخصص -->
-    <section class="py-20 px-10 bg-white border-t border-gray-200">
-        <div class="max-w-5xl mx-auto bg-black text-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
-            <div class="p-12 md:w-2/3">
-                <h2 class="text-3xl font-black mb-4 text-blue-400">Dedicated Financial Accountant</h2>
-                <p class="text-gray-300 mb-8 leading-relaxed">
-                    The "All-in-One" solution. A dedicated professional to handle your daily financial operations on-site or on-call.
-                </p>
-                
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="font-bold w-1/3">Supplier Management</div>
-                        <div class="text-gray-400 text-sm w-2/3">Handling all payments and reconciliations</div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="font-bold w-1/3">Payroll & HR Finance</div>
-                        <div class="text-gray-400 text-sm w-2/3">Calculating salaries and processing payments via bank</div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="font-bold w-1/3">Gov. Compliance</div>
-                        <div class="text-gray-400 text-sm w-2/3">Handling all payments for SIO, LMRA, and other governmental expenses</div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="font-bold w-1/3">Banking</div>
-                        <div class="text-gray-400 text-sm w-2/3">Full management of bank transactions and fund tracking</div>
-                    </div>
-                </div>
-            </div>
+    <!-- SECTION 2: SERVICES GRID (Old Card Style) -->
+    <section class="py-20 px-6 md:px-20 bg-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            <div class="bg-blue-600 p-12 md:w-1/3 flex flex-col justify-center items-center text-center">
-                <p class="text-blue-200 font-semibold mb-2">Starting from</p>
-                <div class="text-6xl font-black text-white mb-2">600</div>
-                <div class="text-xl font-bold text-blue-200">BD / monthly</div>
-                <a href="contact.html" class="mt-8 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition">Contact Us Now</a>
+            <!-- Service 01 -->
+            <div class="service-card bg-gray-50 p-10">
+                <div class="text-growth-blue mb-8">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-black uppercase mb-4 leading-tight">Financial Accounting</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Daily recording, VAT-compliant books, and financial statements. We move you from paper to a professional digital ledger.</p>
             </div>
+
+            <!-- Service 02 -->
+            <div class="service-card bg-gray-50 p-10 border-t-4 border-t-growth-blue">
+                <div class="text-growth-blue mb-8">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-black uppercase mb-4 leading-tight">ERP Software Supervision</h3>
+                <p class="text-[10px] font-bold text-growth-blue uppercase mb-4">Odoo / Zoho / QuickBooks</p>
+                <p class="text-sm text-gray-600 leading-relaxed">Management of your internal staff, "spot-check" audits, and ensuring system-bank balance integrity.</p>
+            </div>
+
+            <!-- Service 03 -->
+            <div class="service-card bg-gray-50 p-10">
+                <div class="text-growth-blue mb-8">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-black uppercase mb-4 leading-tight">Managerial Accounting</h3>
+                <p class="text-[10px] font-bold text-gray-400 uppercase mb-4">Growth Planning</p>
+                <p class="text-sm text-gray-600 leading-relaxed">Strategic planning including Break-Even analysis, Product Costing, and Cash Flow forecasting.</p>
+            </div>
+
+            <!-- Service 04 -->
+            <div class="service-card bg-gray-50 p-10">
+                <div class="text-growth-blue mb-8">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-black uppercase mb-4 leading-tight">ERP Software Implementation</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Professional setup and migration for cloud accounting systems to automate your sales and expenses.</p>
+            </div>
+
         </div>
     </section>
 
-    <!-- الفوتر -->
-    <footer class="bg-black text-white py-12 px-10 mt-10">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-6 md:mb-0">
-                <h2 class="text-3xl font-black tracking-widest uppercase mb-2">Growth<span class="text-gray-400">.</span></h2>
+    <!-- SECTION 3: THE PRINCIPLE BAND -->
+    <section class="bg-black text-white py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-black uppercase mb-8 leading-tight">We don't file and forget. <br><span class="text-growth-blue">We organize, then we activate.</span></h3>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">Every ledger we clean is prepared for a campaign. Every system we build is designed to show you what works.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 4: CTA BAR -->
+    <section class="py-20 bg-white flex justify-center px-6">
+        <div class="bg-black text-white flex flex-col md:flex-row items-stretch shadow-2xl overflow-hidden max-w-4xl w-full">
+            <div class="flex-grow p-8 flex items-center md:border-r border-gray-800">
+                <p class="italic font-extrabold text-lg md:text-xl">
+                    You can't scale what you can't measure.
+                </p>
             </div>
-            <div class="text-right text-sm text-gray-400 space-y-2">
-                <p>📞 +973 6668 0404</p>
-                <p>✉️ info@growth-gcc.com</p>
-                <p>📍 Office 24, Bldg 120, Road 3803, Block 338, Adliya - Bahrain</p>
+            <a href="contact.html" class="bg-growth-blue text-white px-10 py-6 text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-growth-blue transition-all duration-300 flex items-center justify-center text-center">
+                MEET YOUR <br>ACCOUNTING MANAGER
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-12 px-10 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10">
+            
+            <div class="text-center lg:text-left">
+                <div class="text-xl font-black uppercase tracking-tighter mb-1 leading-none">Growth<span class="text-growth-blue">.</span></div>
+                <p class="text-[9px] text-gray-600 uppercase tracking-[0.4em] font-bold">© 2026 Growth Consultancy</p>
+            </div>
+
+            <!-- Social & Contact Icons -->
+            <div class="flex flex-wrap items-center justify-center gap-7">
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/company/growthgcc" target="_blank">
+                    <svg class="footer-icon" viewBox="0 0 176 176"><path d="m63.4 48a15 15 0 1 1 -15-15 15 15 0 0 1 15 15z"></path><path d="m60 73v66.27a3.71 3.71 0 0 1 -3.71 3.73h-15.81a3.71 3.71 0 0 1 -3.72-3.72v-66.28a3.72 3.72 0 0 1 3.72-3.72h15.81a3.72 3.72 0 0 1 3.71 3.72z"></path><path d="m142.64 107.5v32.08a3.41 3.41 0 0 1 -3.42 3.42h-17a3.41 3.41 0 0 1 -3.42-3.42v-31.09c0-4.64 1.36-20.32-12.13-20.32-10.45 0-12.58 10.73-13 15.55v35.86a3.42 3.42 0 0 1 -3.37 3.42h-16.42a3.41 3.41 0 0 1 -3.41-3.42v-66.87a3.41 3.41 0 0 1 3.41-3.42h16.42a3.42 3.42 0 0 1 3.42 3.42v5.78c3.88-5.82 9.63-10.31 21.9-10.31 27.18 0 27.02 25.38 27.02 39.32z"></path></svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/growth.gcc" target="_blank">
+                    <svg class="footer-icon" viewBox="0 0 511 511.9"><path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.097657 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"></path><path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"></path><path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"></path></svg>
+                </a>
+                <!-- Threads -->
+                <a href="https://www.threads.net/@growth.gcc" target="_blank">
+                    <svg class="footer-icon" viewBox="0 0 512 512"><path d="m259.965 512h-.147c-76.391-.518-135.117-25.703-174.575-74.879-35.125-43.755-53.232-104.638-53.84-180.936v-.37c.609-76.316 18.715-137.182 53.84-180.936 39.439-49.176 98.184-74.363 174.556-74.879h.295c58.56.387 107.551 15.451 145.626 44.732 35.789 27.529 60.977 66.766 74.879 116.642l-43.514 12.133c-23.545-84.467-83.138-127.65-177.138-128.332-62.064.442-108.99 19.95-139.505 57.971-28.58 35.605-43.349 87.03-43.884 152.836.553 65.825 15.322 117.25 43.884 152.837 30.516 38.019 77.441 57.526 139.505 57.969 55.941-.405 92.967-13.44 123.76-43.606 35.143-34.426 34.498-76.649 23.25-102.333-6.619-15.139-18.643-27.75-34.85-37.302-4.073 28.802-13.239 52.181-27.399 69.791-18.882 23.508-45.653 36.361-79.544 38.185-25.648 1.382-50.355-4.682-69.531-17.092-22.68-14.677-35.955-37.136-37.375-63.244-1.383-25.389 8.685-48.733 28.34-65.734 18.789-16.244 45.211-25.776 76.427-27.528 23.011-1.291 44.528-.276 64.424 3.042-2.637-15.839-7.983-28.395-15.949-37.467-10.953-12.483-27.898-18.862-50.337-19.01h-.627c-18.014 0-42.482 4.941-58.081 28.137l-37.485-25.205c20.872-31.032 54.781-48.106 95.548-48.106h.922c68.167.424 108.751 42.113 112.789 114.926 2.321.979 4.591 1.991 6.84 3.043 31.807 14.954 55.057 37.597 67.263 65.476 17.001 38.867 18.568 102.205-33.041 152.725-39.422 38.609-87.289 56.034-155.197 56.496h-.147l.018.019zm21.389-249.418c-5.163 0-10.4.147-15.748.461-39.181 2.213-63.594 20.154-62.211 45.709 1.457 26.773 30.995 39.218 59.372 37.689 26.127-1.403 60.129-11.562 65.825-79.158-14.42-3.078-30.275-4.701-47.239-4.701z"></path></svg>
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@growth.gcc" target="_blank">
+                    <svg class="footer-icon" viewBox="0 0 512 512"><path d="m480.32 128.39c-29.22 0-56.18-9.68-77.83-26.01-24.83-18.72-42.67-46.18-48.97-77.83-1.56-7.82-2.4-15.89-2.48-24.16h-83.47v228.08l-.1 124.93c0 33.4-21.75 61.72-51.9 71.68-8.75 2.89-18.2 4.26-28.04 3.72-12.56-.69-24.33-4.48-34.56-10.6-21.77-13.02-36.53-36.64-36.93-63.66-.63-42.23 33.51-76.66 75.71-76.66 8.33 0 16.33 1.36 23.82 3.83v-62.34-22.41c-7.9-1.17-15.94-1.78-24.07-1.78-46.19 0-89.39 19.2-120.27 53.79-23.34 26.14-37.34 59.49-39.5 94.46-2.83 45.94 13.98 89.61 46.58 121.83 4.79 4.73 9.82 9.12 15.08 13.17 27.95 21.51 62.12 33.17 98.11 33.17 8.13 0 16.17-.6 24.07-1.77 33.62-4.98 64.64-20.37 89.12-44.57 30.08-29.73 46.7-69.2 46.88-111.21l-.43-186.56c14.35 11.07 30.04 20.23 46.88 27.34 26.19 11.05 53.96 16.65 82.54 16.64v-60.61-22.49c.02.02-.22.02-.24.02z"></path></svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@growthgcc" target="_blank">
+                    <svg class="footer-icon" viewBox="0 0 461.001 461.001"><path d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728 c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137 C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607 c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"></path></svg>
+                </a>
+                
+                <!-- Spacer -->
+                <div class="w-[1px] h-6 bg-gray-800 mx-2"></div>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/97366680404" target="_blank">
+                    <svg class="footer-icon" viewBox="-23 -21 682 682.66669"><path d="m544.386719 93.007812c-59.875-59.945312-139.503907-92.9726558-224.335938-93.007812-174.804687 0-317.070312 142.261719-317.140625 317.113281-.023437 55.894531 14.578125 110.457031 42.332032 158.550781l-44.992188 164.335938 168.121094-44.101562c46.324218 25.269531 98.476562 38.585937 151.550781 38.601562h.132813c174.785156 0 317.066406-142.273438 317.132812-317.132812.035156-84.742188-32.921875-164.417969-92.800781-224.359376zm-224.335938 487.933594h-.109375c-47.296875-.019531-93.683594-12.730468-134.160156-36.742187l-9.621094-5.714844-99.765625 26.171875 26.628907-97.269531-6.269532-9.972657c-26.386718-41.96875-40.320312-90.476562-40.296875-140.28125.054688-145.332031 118.304688-263.570312 263.699219-263.570312 70.40625.023438 136.589844 27.476562 186.355469 77.300781s77.15625 116.050781 77.132812 186.484375c-.0625 145.34375-118.304687 263.59375-263.59375 263.59375zm144.585938-197.417968c-7.921875-3.96875-46.882813-23.132813-54.148438-25.78125-7.257812-2.644532-12.546875-3.960938-17.824219 3.96875-5.285156 7.929687-20.46875 25.78125-25.09375 31.066406-4.625 5.289062-9.242187 5.953125-17.167968 1.984375-7.925782-3.964844-33.457032-12.335938-63.726563-39.332031-23.554687-21.011719-39.457031-46.960938-44.082031-54.890626-4.617188-7.9375-.039062-11.8125 3.476562-16.171874 8.578126-10.652344 17.167969-21.820313 19.808594-27.105469 2.644532-5.289063 1.320313-9.917969-.664062-13.882813-1.976563-3.964844-17.824219-42.96875-24.425782-58.839844-6.4375-15.445312-12.964843-13.359374-17.832031-13.601562-4.617187-.230469-9.902343-.277344-15.1875-.277344-5.28125 0-13.867187 1.980469-21.132812 9.917969-7.261719 7.933594-27.730469 27.101563-27.730469 66.105469s28.394531 76.683594 32.355469 81.972656c3.960937 5.289062 55.878906 85.328125 135.367187 119.648438 18.90625 8.171874 33.664063 13.042968 45.175782 16.695312 18.984374 6.03125 36.253906 5.179688 49.910156 3.140625 15.226562-2.277344 46.878906-19.171875 53.488281-37.679687 6.601563-18.511719 6.601563-34.375 4.617187-37.683594-1.976562-3.304688-7.261718-5.285156-15.183593-9.253906zm0 0"></path></svg>
+                </a>
+                <!-- Email -->
+                <a href="mailto:info@growth-gcc.com">
+                    <svg class="footer-icon" viewBox="0 0 512 512"><path d="M467,76H45C20.137,76,0,96.262,0,121v270c0,24.885,20.285,45,45,45h422c24.655,0,45-20.03,45-45V121 C512,96.306,491.943,76,467,76z M460.698,106c-9.194,9.145-167.415,166.533-172.878,171.967c-8.5,8.5-19.8,13.18-31.82,13.18 s-23.32-4.681-31.848-13.208C220.478,274.284,64.003,118.634,51.302,106H460.698z M30,384.894V127.125L159.638,256.08L30,384.894z M51.321,406l129.587-128.763l22.059,21.943c14.166,14.166,33,21.967,53.033,21.967c20.033,0,38.867-7.801,53.005-21.939 l22.087-21.971L460.679,406H51.321z M482,384.894L352.362,256.08L482,127.125V384.894z"></path></svg>
+                </a>
+            </div>
+
+            <div class="text-[10px] text-gray-600 uppercase tracking-widest font-bold">
+                Calculated ROI Only.
             </div>
         </div>
     </footer>
 
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+          }
+        });
+      }
+    </script>
+    <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        // تبديل ظهور المنيو
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+        
+        // منع الصفحة من التحرك خلف المنيو
+        if (!mobileMenu.classList.contains('hidden')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // إغلاق المنيو عند الضغط على أي رابط
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+    });
+</script>
 </body>
 </html>
