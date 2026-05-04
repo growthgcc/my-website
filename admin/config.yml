@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  # إعدادات المقالات (Notes)
+  - name: "blog"
+    label: "Notes (Blog Posts)"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["THE BOOKS", "THE FEED"] }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # إعدادات الصفحات (تعديل نصوص الصفحات)
+  - name: "pages"
+    label: "Pages Content"
+    files:
+      - file: "index.html"
+        label: "Homepage"
+        name: "home"
+        fields:
+          - { label: "Hero Title White", name: "hero_white", widget: "string" }
+          - { label: "Hero Title Blue", name: "hero_blue", widget: "string" }
+          - { label: "SEO Description", name: "description", widget: "text" }
+
+  # الإعدادات العامة (الفوتر، رقم الهاتف، الإيميل)
+  - name: "settings"
+    label: "Global Settings"
+    files:
+      - file: "data/settings.json"
+        label: "Site Contact Info"
+        name: "contact_info"
+        fields:
+          - { label: "Phone Number", name: "phone", widget: "string" }
+          - { label: "Email Address", name: "email", widget: "string" }
